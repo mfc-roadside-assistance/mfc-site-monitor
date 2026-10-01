@@ -1,0 +1,216 @@
+{
+  "blind_since": "2026-10-01T19:02:57+00:00",
+  "checks": {
+    "404 page": {
+      "alerted": false,
+      "at": "2026-10-01T19:03:25+00:00",
+      "detail": "sg-captcha 202",
+      "fails": 0,
+      "last": "BLIND",
+      "oks": 1
+    },
+    "Ads URL 01": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "Ads URL 02": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "Ads URL 03": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "Ads URL 04": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "Ads URL 05": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "Ads URL 06": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "Ads URL 07": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "Ads URL 08": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "Ads URL 09": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "Ads URL 10": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "TEST probe": {
+      "alerted": false,
+      "at": "2026-10-01T19:03:25+00:00",
+      "detail": "sg-captcha 202",
+      "fails": 0,
+      "last": "BLIND",
+      "oks": 0
+    },
+    "WordPress page GTM": {
+      "alerted": false,
+      "at": "2026-10-01T19:03:25+00:00",
+      "detail": "sg-captcha 202",
+      "fails": 1,
+      "first_fail": "2026-10-01T19:01:23+00:00",
+      "last": "BLIND",
+      "oks": 0
+    },
+    "city page (Ontario)": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "combo page (flat tire, Ontario)": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "home": {
+      "alerted": false,
+      "at": "2026-10-01T19:03:25+00:00",
+      "detail": "sg-captcha 202",
+      "fails": 0,
+      "last": "BLIND",
+      "oks": 1
+    },
+    "hub battery-service": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "hub car-lockout": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "hub flat-tire-change": {
+      "alerted": false,
+      "at": "2026-10-01T19:03:25+00:00",
+      "detail": "sg-captcha 202",
+      "fails": 0,
+      "last": "BLIND",
+      "oks": 1
+    },
+    "hub fuel-delivery": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "hub jump-start": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "hub tire-replacement": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "HTTP 200",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "redirect /gps": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "302 -> expected target",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "redirect http->https keeps query": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "301 -> expected target",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "redirect www -> apex": {
+      "alerted": false,
+      "at": "2026-10-01T19:01:23+00:00",
+      "detail": "301 -> expected target",
+      "fails": 0,
+      "last": "OK",
+      "oks": 1
+    },
+    "reviews.json freshness": {
+      "alerted": false,
+      "at": "2026-10-01T19:03:25+00:00",
+      "detail": "sg-captcha 202",
+      "fails": 0,
+      "last": "BLIND",
+      "oks": 1
+    }
+  },
+  "last_full": "2026-10-01T19:01:23+00:00",
+  "last_heartbeat": "2026-10-01"
+}
