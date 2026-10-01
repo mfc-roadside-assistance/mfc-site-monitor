@@ -5,7 +5,7 @@ Standard library only. Never prints secrets or page bodies: logs show check ids,
 statuses and HTTP codes only. Honest user agent; a SiteGround challenge (HTTP 202 +
 sg-captcha) is treated as BLIND (cannot see), never as DOWN, and is never bypassed.
 
-Tiers: CORE checks every run (~15 min); FULL sweep at most hourly. Any check that is
+Tiers: CORE checks every run (~15 min); FULL sweep every ~4 h. Any check that is
 failing or alerted is re-checked every run. A check must fail on 2 consecutive runs
 before it alerts; alerts are grouped; a still-failing incident is re-announced at most
 every 2 h; a check that passes 2 consecutive runs after an alert sends RECOVERED.
@@ -20,7 +20,7 @@ PT = ZoneInfo("America/Los_Angeles")
 STATE_PATH = os.environ.get("STATE_PATH", "state/state.json")
 CONFIRM_FAILS, CONFIRM_OKS = 2, 2
 REPEAT_EVERY = timedelta(hours=2)
-FULL_EVERY = timedelta(minutes=55)
+FULL_EVERY = timedelta(hours=4) - timedelta(minutes=5)   # full sweep every ~4 h (lighter load on SiteGround)
 BLIND_ALERT_AFTER, BLIND_REPEAT = timedelta(hours=2), timedelta(hours=6)
 REVIEWS_MIN = int(os.environ.get("REVIEWS_MIN", "1300"))
 REVIEWS_MAX = int(os.environ.get("REVIEWS_MAX", "1999"))

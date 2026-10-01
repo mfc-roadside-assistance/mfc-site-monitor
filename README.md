@@ -7,7 +7,7 @@ and posts to the private **Roadside Website Alerts** Telegram chat.
 - **Every run (~15 min):** homepage, one service hub, a made-up URL (must be a real
   404 with the MFC 404 page), and `reviews.json` freshness (`googleTotal` in range,
   `lastUpdated` within 26 h).
-- **Hourly (full sweep):** the 10 Google Ads final URLs, all 6 service hubs, a city
+- **Every ~4 h (full sweep):** the 10 Google Ads final URLs, all 6 service hubs, a city
   page, a combo page, http→https (query kept), `/gps`, www→apex, and GTM on a
   WordPress page.
 - Any check that is failing is re-checked every run.
