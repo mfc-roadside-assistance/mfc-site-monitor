@@ -1,0 +1,66 @@
+name: site-monitor
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_url:
+        description: "TEST probe URL (alerts are labelled TEST); leave empty for a normal run"
+        required: false
+        default: ""
+      force_full:
+        description: "Run the full hourly sweep now"
+        type: boolean
+        default: false
+      force_heartbeat:
+        description: "Send a heartbeat now (manual check)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # only to save monitor state to the monitor-state branch
+
+concurrency:
+  group: site-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load state
+        run: |
+          mkdir -p state
+          if git fetch -q origin monitor-state --depth=1 2>/dev/null; then
+            git show FETCH_HEAD:state.json > state/state.json 2>/dev/null || echo '{}' > state/state.json
+          else
+            echo '{}' > state/state.json
+          fi
+
+      - name: Run checks
+        env:
+          TG_TOKEN: ${{ secrets.WEBSITE_TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.WEBSITE_TELEGRAM_CHAT_ID }}
+          TEST_URL: ${{ inputs.test_url }}
+          FORCE_FULL: ${{ inputs.force_full }}
+          FORCE_HEARTBEAT: ${{ inputs.force_heartbeat }}
+          STATE_PATH: state/state.json
+        run: python3 monitor.py
+
+      - name: Save state
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          tmp=$(mktemp -d)
+          cp state/state.json "$tmp/state.json"
+          cd "$tmp"
+          git init -q
+          git config user.name "mfc-site-monitor"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git commit -q -m "state $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:monitor-state
